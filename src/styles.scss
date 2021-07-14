@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+:root {
+  --boxColor: #0ff7;
+  --rotateSpeed: 30s;
+  --bounceSpeed: 2s;
+}
+
+.mat-elevation-z6 {
+  // Adds a shadow for elevation level 2 with default color and full opacity:
+  @include mat-elevation(6);
+}
+
+html, body { 
+  height: 100%;
+  background-color: #fafafa;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+.breadcrumbs {
+  padding: 15px 0;
+}
+
+.errorBlock {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #f44336;
+  display: inline-block;
+}

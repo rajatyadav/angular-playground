@@ -1,0 +1,23 @@
+<header class="banner-header">
+  <div class="banner-content">
+    <h1 style="font-size: 52px;">Home page</h1>
+    <p class="mat-h1">Angular routing</p>
+  </div>
+</header>
+
+<h2>Testing Template input</h2>
+<input
+  type="text"
+  name="name"
+  [(ngModel)]="templateName"
+  disabled=true
+/>
+<p>output: {{templateName}}</p>
+
+<hr />
+
+<h2>Testing Reactive input</h2>
+<input type="text" [formControl]="reactiveName" />
+  
+
+<p>output: {{ reactiveName.value }}</p>

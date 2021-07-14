@@ -1,0 +1,28 @@
+<div class="breadcrumbs">
+  <a mat-button [routerLink]="['/caregivers']">Caregivers</a>/
+  <button mat-button disabled>{{ caregiver?.caregiverName || '--' }}</button>
+</div>
+
+<mat-card class="details-card" *ngIf="caregiver">
+  <mat-card-header>
+    <mat-card-title>{{ caregiver.caregiverName }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="caregiver.imageUrl" alt="Photo of caregiver">
+  <mat-card-content>
+    <p><b>Code: </b>{{ caregiver.caregiverCode }}</p>
+    <p><b>DOB: </b>{{ caregiver.dob }}</p>
+    <p><b>Contact: </b>{{ caregiver.contact }}</p>
+    <div class="care-actions">
+      <button mat-flat-button color="accent">
+        Edit
+      </button>
+      <button mat-flat-button color="warn">
+        Delete
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="errorBlock" *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>

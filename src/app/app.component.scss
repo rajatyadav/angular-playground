@@ -1,0 +1,33 @@
+mat-toolbar {
+  position: fixed;
+  z-index: 5;
+}
+
+.active-link {
+  background-color: #5326a3;
+}
+
+.dash {
+  margin: 0 40px;
+  border-left: 1px solid #fff;
+  height: 50%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-container {
+  // padding-top: 70px;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  display: flex;
+  flex-direction: row;
+
+  .flex-5 {
+    flex: 5
+  }
+  .flex-1 {
+    flex: 1
+  }
+}

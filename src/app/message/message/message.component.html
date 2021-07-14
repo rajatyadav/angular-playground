@@ -1,0 +1,14 @@
+
+<mat-card style="height: calc(100vh - 120px); margin-left: 20px;">
+  <mat-card-header>
+    <mat-card-title>Messages</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngFor="let msg of messageService.messages">{{ msg }}</p>
+    <div class="care-actions">
+      <button mat-flat-button color="warn" (click)="close()">
+        Close
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

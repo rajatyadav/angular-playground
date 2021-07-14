@@ -1,0 +1,36 @@
+<div class="breadcrumbs">
+  <a 
+    mat-button
+    [routerLink]="['/patients']"
+    queryParamsHandling="preserve" 
+  >Patients</a>/
+  <!-- merge -->
+  <button mat-button disabled>{{ patient?.patientName || '--' }}</button>
+</div>
+
+<mat-card class="details-card" *ngIf="patient">
+  <mat-card-header>
+    <mat-card-title>{{ patient.patientName }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="patient.imageUrl" alt="Photo of patient">
+  <mat-card-content>
+    <p><b>Code: </b>{{ patient.patientCode }}</p>
+    <p><b>DOB: </b>{{ patient.dob }}</p>
+    <p><b>Contact: </b>{{ patient.contact }}</p>
+    <div class="care-actions">
+      <a 
+        mat-flat-button color="accent"
+        [routerLink]="['/patients', patient.id, 'edit']"
+      >
+        Edit
+      </a>
+      <button mat-flat-button color="warn">
+        Delete
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="errorBlock" *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>

@@ -1,0 +1,23 @@
+<div class="breadcrumbs">
+  <a mat-button [routerLink]="['/patients']" queryParamsHandling="preserve">Patients</a>/
+  <a mat-button [routerLink]="['/patients', patient.id]" queryParamsHandling="preserve">{{ patient?.patientName || '--' }}</a>/
+  <button mat-button disabled>Edit</button>
+</div>
+
+<a mat-button [routerLink]="['info']" routerLinkActive="active-link">Basic info</a>
+<a mat-button [routerLink]="['medication']" routerLinkActive="active-link">Medication</a>
+
+
+
+<a mat-flat-button [routerLink]="[{ outlets: { second: ['medication']}} ]">Second outlet</a>
+
+<mat-card class="details-card" *ngIf="patient">
+  <mat-card-header>
+    <mat-card-title>{{ patient.patientName }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="patient.imageUrl" alt="Photo of patient">
+  <mat-card-content>
+    <router-outlet></router-outlet>
+    <router-outlet name="second"></router-outlet>
+  </mat-card-content>
+</mat-card>
